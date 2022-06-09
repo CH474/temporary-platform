@@ -158,7 +158,7 @@ void fb_draw_rect(int x, int y, int w, int h, int color)
 	int currentx,currenty;
 	for(currentx=x;currentx<=x+w;currentx++)
 		for(currenty=y;currenty<=y+h;currenty++)
-			fb_draw_pixel(currentx,currenty,color);
+			*(buf + currenty*SCREEN_WIDTH + currentx) = color;
 /*---------------------------------------------------*/
 	return;
 }
